@@ -19,7 +19,7 @@ interface Props extends RouteComponentProps<{}> {}
 
 class FilteredProductLicenseConnection extends FilteredConnection<
     GQL.IProductLicense,
-    Pick<SiteAdminProductLicenseNodeProps, 'onDidUpdate' | 'showSubscription'>
+    Pick<SiteAdminProductLicenseNodeProps, 'showSubscription'>
 > {}
 
 /**
@@ -38,8 +38,7 @@ export class SiteAdminProductLicensesPage extends React.Component<Props> {
     }
 
     public render(): JSX.Element | null {
-        const nodeProps: Pick<SiteAdminProductLicenseNodeProps, 'onDidUpdate' | 'showSubscription'> = {
-            onDidUpdate: this.onDidUpdateProductLicense,
+        const nodeProps: Pick<SiteAdminProductLicenseNodeProps, 'showSubscription'> = {
             showSubscription: true,
         }
 
